@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="64" cy="64" r="60" fill="#2EA44F"/>
+  
+  <!-- 预览窗口 -->
+  <rect x="34" y="38" width="60" height="52" rx="6" fill="white" opacity="0.95"/>
+  
+  <!-- 眼睛 -->
+  <path d="M64 54C50 54 40 64 40 64C40 64 50 74 64 74C78 74 88 64 88 64C88 64 78 54 64 54ZM64 70C60.7 70 58 67.3 58 64C58 60.7 60.7 58 64 58C67.3 58 70 60.7 70 64C70 67.3 67.3 70 64 70Z" fill="#2EA44F"/>
+  
+  <!-- 瞳孔 -->
+  <circle cx="64" cy="64" r="3" fill="#2EA44F"/>
+</svg> 
