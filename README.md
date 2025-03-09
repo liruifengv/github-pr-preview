@@ -20,7 +20,24 @@ A browser extension that adds a quick preview button to GitHub Pull Request page
 
 Coming soon...
 
-### Manual Installation
+### From GitHub Release
+
+1. Go to the [Releases](https://github.com/liruifengv/github-pr-preview/releases) page
+2. Download the latest version:
+   - For Chrome/Edge: `github-pr-preview-{version}-chrome.zip`
+   - For Firefox: `github-pr-preview-{version}-firefox.zip`
+3. Install in your browser:
+   - Chrome/Edge:
+     1. Open `chrome://extensions/`
+     2. Enable "Developer mode"
+     3. Click "Load unpacked"
+     4. Select the extracted extension folder
+   - Firefox:
+     1. Open `about:debugging#/runtime/this-firefox`
+     2. Click "Load Temporary Add-on"
+     3. Select the downloaded ZIP file
+
+### Manual Build
 
 1. Clone this repository:
 ```bash
@@ -34,14 +51,14 @@ pnpm install
 
 3. Build the extension:
 ```bash
+# For Chrome/Edge
 pnpm build
+
+# For Firefox
+pnpm build:firefox
 ```
 
-4. Load the extension in Chrome:
-   - Open `chrome://extensions/`
-   - Enable "Developer mode"
-   - Click "Load unpacked"
-   - Select the `.output/chrome-mv3` directory
+4. Load the extension in your browser (see instructions above)
 
 ## Development
 
