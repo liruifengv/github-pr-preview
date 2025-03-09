@@ -14,6 +14,10 @@ A browser extension that adds a quick preview button to GitHub Pull Request page
 - 📌 Works in both main title and sticky header
 - 🚀 Lightweight and performant
 
+## Screenshot
+
+![Preview Button Demo](./screenshots/v1.png)
+
 ## Installation
 
 ### From Chrome Web Store
