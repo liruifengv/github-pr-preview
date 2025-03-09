@@ -40,9 +40,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           title: Release ${{ steps.get_version.outputs.VERSION }}
+          tag: v${{ steps.get_version.outputs.VERSION }}
           
       - name: Upload Release Asset
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload v${{ steps.get_version.outputs.VERSION }} .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip
+          gh release upload v${{ steps.get_version.outputs.VERSION }} .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip --clobber
