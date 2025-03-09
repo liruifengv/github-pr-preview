@@ -3,25 +3,34 @@ name: Release
 on:
   push:
     tags:
-      - v*
+      - "v*"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
+          
       - name: Install dependencies
         run: pnpm install
+        
       - name: Build and zip extension
         run: pnpm zip
+        
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+        
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -32,12 +41,13 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+          
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./.output/chrome-mv3.zip
-          asset_name: github-pr-preview-chrome-mv3.zip
+          asset_path: ./.output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip
+          asset_name: github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip
           asset_content_type: application/zip
