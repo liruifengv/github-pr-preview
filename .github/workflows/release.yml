@@ -27,8 +27,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
         
-      - name: Build and zip extension
+      - name: Build and zip Chrome extension
         run: pnpm zip
+        
+      - name: Build and zip Firefox extension
+        run: pnpm zip:firefox
         
       - name: Get version from tag
         id: get_version
@@ -42,8 +45,11 @@ jobs:
           title: Release ${{ steps.get_version.outputs.VERSION }}
           tag: v${{ steps.get_version.outputs.VERSION }}
           
-      - name: Upload Release Asset
+      - name: Upload Release Assets
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload v${{ steps.get_version.outputs.VERSION }} .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip --clobber
+          gh release upload v${{ steps.get_version.outputs.VERSION }} \
+            .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip \
+            .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-firefox.zip \
+            --clobber
