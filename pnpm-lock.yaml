@@ -14,6 +14,9 @@ importers:
       '@wxt-dev/auto-icons':
         specifier: ^1.0.2
         version: 1.0.2(wxt@0.19.29(@types/node@22.13.10)(rollup@4.35.0))
+      bumpp:
+        specifier: ^9.11.1
+        version: 9.11.1(magicast@0.3.5)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -553,6 +556,9 @@ packages:
   any-promise@1.3.0:
     resolution: {integrity: sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==}
 
+  argparse@2.0.1:
+    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+
   array-differ@4.0.0:
     resolution: {integrity: sha512-Q6VPTLMsmXZ47ENG3V+wQyZS1ZxXMxFyYzA+Z/GMrJ6yIutAIEf9wTyroTzmGjNfox9/h3GdGBCVh43GVFx4Uw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -617,6 +623,11 @@ packages:
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
+  bumpp@9.11.1:
+    resolution: {integrity: sha512-jBHlab9NnRwrpHsockb5E+MBo0os2yS6S7i3cnN8hB6EkTardKQotmd0CFdOc8pubLz2fxj2AD6RGtrySVG6Mw==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   bundle-name@3.0.0:
     resolution: {integrity: sha512-PKA4BeSvBpQKQ8iPOGCSiell+N8P+Tf1DlwqmYhpe2gAhKPHn8EYOxVT+ShuGmhg8lN8XiSlS80yiExKXrURlw==}
     engines: {node: '>=12'}
@@ -629,6 +640,14 @@ packages:
     resolution: {integrity: sha512-0tECWShh6wUysgucJcBAoYegf3JJoZWibxdqhTm7OHPeT42qdjkZ29QCMcKwbgU1kiH+auSIasNRXMLWXafXig==}
     engines: {'0': node >=0.10.0}
     hasBin: true
+
+  c12@2.0.4:
+    resolution: {integrity: sha512-3DbbhnFt0fKJHxU4tEUPmD1ahWE4PWPMomqfYsTJdrhpmEnRKJi3qSC4rO5U6E6zN1+pjBY7+z8fUmNRMaVKLw==}
+    peerDependencies:
+      magicast: ^0.3.5
+    peerDependenciesMeta:
+      magicast:
+        optional: true
 
   c12@3.0.2:
     resolution: {integrity: sha512-6Tzk1/TNeI3WBPpK0j/Ss4+gPj3PUJYbWl/MWDJBThFvwNGNkXtd7Cz8BJtD4aRwoGHtzQD0SnxamgUiBH0/Nw==}
@@ -999,6 +1018,14 @@ packages:
   fd-slicer@1.1.0:
     resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
 
+  fdir@6.4.3:
+    resolution: {integrity: sha512-PMXmW2y1hDDfTSRc9gaXIuCCRpuoz3Kaz8cUelp3smouvfT632ozg2vrT6lJsHKKOF59YLbOGfAWGUcKEfRMQw==}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
   filesize@10.1.6:
     resolution: {integrity: sha512-sJslQKU2uM33qH5nqewAwVB2QgR6w1aMNsYUp3aN5rMRyXEwJGmZvaWzeJFNTOXWlHQyBFCWrdj3fV/fsTOX8w==}
     engines: {node: '>= 10.4.0'}
@@ -1318,6 +1345,10 @@ packages:
   js-tokens@9.0.1:
     resolution: {integrity: sha512-mxa9E9ITFOt0ban3j6L5MpjwegGz6lBQmM1IJkWeBZGcMxto50+eWdjC/52xDbS2vy0k7vIMK0Fe2wfL9OQSpQ==}
 
+  js-yaml@4.1.0:
+    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+    hasBin: true
+
   json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
 
@@ -1329,6 +1360,9 @@ packages:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
     hasBin: true
+
+  jsonc-parser@3.3.1:
+    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
@@ -1620,6 +1654,9 @@ packages:
   package-json@8.1.1:
     resolution: {integrity: sha512-cbH9IAIJHNj9uXi196JVsRlt7cHKak6u/e6AkL/bkRelZ7rlL3X1YKxsZwa36xipOEKAsdtmaG6aAJoM1fx2zA==}
     engines: {node: '>=14.16'}
+
+  package-manager-detector@0.2.11:
+    resolution: {integrity: sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==}
 
   pako@1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
@@ -1960,8 +1997,15 @@ packages:
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
 
+  tiny-conventional-commits-parser@0.0.1:
+    resolution: {integrity: sha512-N5+AZWdBeHNSgTIaxvx0+9mFrnW4H1BbjQ84H7i3TuWSkno8Hju886hLaHZhE/hYEKrfrfl/uHurqpZJHDuYGQ==}
+
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
+
+  tinyglobby@0.2.12:
+    resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
+    engines: {node: '>=12.0.0'}
 
   titleize@3.0.0:
     resolution: {integrity: sha512-KxVu8EYHDPBdUYdKZdKtU2aj2XfEx9AfjXxE/Aj0vT06w2icA09Vus1rh6eSu1y01akYg6BjIK/hxyLJINoMLQ==}
@@ -2586,6 +2630,8 @@ snapshots:
 
   any-promise@1.3.0: {}
 
+  argparse@2.0.1: {}
+
   array-differ@4.0.0: {}
 
   array-union@3.0.1: {}
@@ -2651,6 +2697,22 @@ snapshots:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
+  bumpp@9.11.1(magicast@0.3.5):
+    dependencies:
+      c12: 2.0.4(magicast@0.3.5)
+      cac: 6.7.14
+      escalade: 3.2.0
+      js-yaml: 4.1.0
+      jsonc-parser: 3.3.1
+      package-manager-detector: 0.2.11
+      prompts: 2.4.2
+      semver: 7.7.1
+      tiny-conventional-commits-parser: 0.0.1
+      tinyexec: 0.3.2
+      tinyglobby: 0.2.12
+    transitivePeerDependencies:
+      - magicast
+
   bundle-name@3.0.0:
     dependencies:
       run-applescript: 5.0.0
@@ -2665,6 +2727,23 @@ snapshots:
       moment: 2.30.1
       mv: 2.1.1
       safe-json-stringify: 1.2.0
+
+  c12@2.0.4(magicast@0.3.5):
+    dependencies:
+      chokidar: 4.0.3
+      confbox: 0.1.8
+      defu: 6.1.4
+      dotenv: 16.4.7
+      giget: 1.2.5
+      jiti: 2.4.2
+      mlly: 1.7.4
+      ohash: 2.0.11
+      pathe: 2.0.3
+      perfect-debounce: 1.0.0
+      pkg-types: 1.3.1
+      rc9: 2.1.2
+    optionalDependencies:
+      magicast: 0.3.5
 
   c12@3.0.2(magicast@0.3.5):
     dependencies:
@@ -3069,6 +3148,10 @@ snapshots:
     dependencies:
       pend: 1.2.0
 
+  fdir@6.4.3(picomatch@4.0.2):
+    optionalDependencies:
+      picomatch: 4.0.2
+
   filesize@10.1.6: {}
 
   fill-range@7.1.1:
@@ -3341,11 +3424,17 @@ snapshots:
 
   js-tokens@9.0.1: {}
 
+  js-yaml@4.1.0:
+    dependencies:
+      argparse: 2.0.1
+
   json-buffer@3.0.1: {}
 
   json-parse-even-better-errors@3.0.2: {}
 
   json5@2.2.3: {}
+
+  jsonc-parser@3.3.1: {}
 
   jsonfile@6.1.0:
     dependencies:
@@ -3680,6 +3769,10 @@ snapshots:
       registry-auth-token: 5.1.0
       registry-url: 6.0.1
       semver: 7.7.1
+
+  package-manager-detector@0.2.11:
+    dependencies:
+      quansync: 0.2.8
 
   pako@1.0.11: {}
 
@@ -4065,7 +4158,14 @@ snapshots:
 
   through@2.3.8: {}
 
+  tiny-conventional-commits-parser@0.0.1: {}
+
   tinyexec@0.3.2: {}
+
+  tinyglobby@0.2.12:
+    dependencies:
+      fdir: 6.4.3(picomatch@4.0.2)
+      picomatch: 4.0.2
 
   titleize@3.0.0: {}
 

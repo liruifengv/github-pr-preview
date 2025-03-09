@@ -1,8 +1,8 @@
 {
-  "name": "wxt-starter",
-  "description": "manifest.json description",
+  "name": "github-pr-preview",
+  "description": "Quick access to deployment previews in GitHub Pull Requests",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -12,11 +12,13 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "postinstall": "wxt prepare",
+    "release": "bumpp && git push --follow-tags"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.280",
     "@wxt-dev/auto-icons": "^1.0.2",
+    "bumpp": "^9.11.1",
     "typescript": "^5.6.3",
     "wxt": "^0.19.13"
   }
