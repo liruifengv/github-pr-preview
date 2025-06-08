@@ -6,7 +6,7 @@ export default defineConfig({
   manifest: {
     name: 'GitHub PR Preview',
     description: 'Quick access to deployment previews in GitHub Pull Requests',
-    permissions: ['activeTab'],
+    permissions: [],
     host_permissions: ['https://github.com/*'],
   },
   modules: ['@wxt-dev/auto-icons'],
