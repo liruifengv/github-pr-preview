@@ -8,6 +8,7 @@ export default defineConfig({
     description: 'Quick access to deployment previews in GitHub Pull Requests',
     permissions: [],
     host_permissions: ['https://github.com/*'],
+    homepage_url: "https://github.com/liruifengv/github-pr-preview/issues",
   },
   outDir: "dist",
   modules: ['@wxt-dev/auto-icons'],
