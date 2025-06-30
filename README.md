@@ -10,6 +10,7 @@ A browser extension that adds a quick preview button to GitHub Pull Request page
   - Vercel
   - Cloudflare Pages
   - Zeabur
+  - Surge
 - 🎨 Native GitHub UI integration
 - 📌 Works in both main title and sticky header
 - 🚀 Lightweight and performant
