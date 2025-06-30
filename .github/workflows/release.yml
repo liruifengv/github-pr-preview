@@ -50,6 +50,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release upload v${{ steps.get_version.outputs.VERSION }} \
-            .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip \
-            .output/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-firefox.zip \
+            dist/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-chrome.zip \
+            dist/github-pr-preview-${{ steps.get_version.outputs.VERSION }}-firefox.zip \
             --clobber
