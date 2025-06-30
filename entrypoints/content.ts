@@ -69,24 +69,12 @@ export default defineContentScript({
                 url: link.href,
                 platform: platform as keyof typeof PREVIEW_PLATFORMS
               };
-              
-              // 优先添加有关键词的链接
-              if (hasPreviewKeyword) {
-                previewLinks.push(linkData);
-              } else {
-                // 记录所有平台链接作为备选
-                allPlatformLinks.push(linkData);
-              }
+              previewLinks.push(linkData);
               break;
             }
           }
         });
       });
-      
-      // 如果没有找到带关键词的预览链接，则使用备选链接
-      if (previewLinks.length === 0 && allPlatformLinks.length > 0) {
-        previewLinks.push(...allPlatformLinks);
-      }
 
       if (previewLinks.length === 0) {
         return;
@@ -170,7 +158,6 @@ export default defineContentScript({
     // 处理页面变化的主函数
     const handlePageChange = async () => {
       // 清理现有按钮
-      debugger;
       cleanupExistingButtons();
       
       // 如果不是PR页面，直接返回
