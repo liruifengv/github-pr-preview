@@ -22,7 +22,7 @@ A browser extension that adds a quick preview button to GitHub Pull Request page
 
 ### From Chrome Web Store
 
-Coming soon...
+https://chromewebstore.google.com/detail/github-pr-preview/hbccekhbjloldkklgjmmbhonpodommmk
 
 ### From GitHub Release
 
