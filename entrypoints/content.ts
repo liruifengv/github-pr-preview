@@ -17,7 +17,11 @@ const PREVIEW_PLATFORMS = {
   ZEABUR: {
     domain: 'zeabur.app',
     name: 'Zeabur'
-  }
+  },
+  SURGE: {
+    domain: 'surge.sh',
+    name: 'Surge'
+  },
 } as const;
 
 // 预览相关的关键词
@@ -30,7 +34,6 @@ const PREVIEW_KEYWORDS = [
 export default defineContentScript({
   matches: ['https://github.com/*'],
   async main() {
-    let currentUrl = window.location.href;
     let observer: MutationObserver | null = null;
 
     // 主要执行函数
@@ -49,6 +52,7 @@ export default defineContentScript({
       // 查找预览链接
       const comments = document.querySelectorAll('.comment-body');
       const previewLinks: Array<{ url: string; platform: keyof typeof PREVIEW_PLATFORMS }> = [];
+      const allPlatformLinks: Array<{ url: string; platform: keyof typeof PREVIEW_PLATFORMS }> = [];
       
       comments.forEach((comment) => {
         const text = comment.textContent?.toLowerCase() || '';
@@ -58,19 +62,31 @@ export default defineContentScript({
           const href = link.href.toLowerCase();
           const hasPreviewKeyword = PREVIEW_KEYWORDS.some(keyword => text.includes(keyword));
           
-          if (hasPreviewKeyword) {
-            for (const [platform, config] of Object.entries(PREVIEW_PLATFORMS)) {
-              if (href.includes(config.domain)) {
-                previewLinks.push({ 
-                  url: link.href,
-                  platform: platform as keyof typeof PREVIEW_PLATFORMS
-                });
-                break;
+          // 检查链接是否包含预览平台域名
+          for (const [platform, config] of Object.entries(PREVIEW_PLATFORMS)) {
+            if (href.includes(config.domain)) {
+              const linkData = { 
+                url: link.href,
+                platform: platform as keyof typeof PREVIEW_PLATFORMS
+              };
+              
+              // 优先添加有关键词的链接
+              if (hasPreviewKeyword) {
+                previewLinks.push(linkData);
+              } else {
+                // 记录所有平台链接作为备选
+                allPlatformLinks.push(linkData);
               }
+              break;
             }
           }
         });
       });
+      
+      // 如果没有找到带关键词的预览链接，则使用备选链接
+      if (previewLinks.length === 0 && allPlatformLinks.length > 0) {
+        previewLinks.push(...allPlatformLinks);
+      }
 
       if (previewLinks.length === 0) {
         return;

@@ -9,6 +9,7 @@ export default defineConfig({
     permissions: [],
     host_permissions: ['https://github.com/*'],
   },
+  outDir: "dist",
   modules: ['@wxt-dev/auto-icons'],
   autoIcons: {
     // 禁用开发环境下的灰度模式
